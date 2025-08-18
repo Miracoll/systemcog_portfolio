@@ -1,0 +1,104 @@
+/* google font start */
+/* @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"); */
+
+/* google font end */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./../public/assets/css/fontawesome.css";
+@import "./../public/assets/css/remixicon.css";
+@import "./../public/assets/css/main.css";
+@import "./../public/assets/css/app.css";
+
+/* swiper pagination start */
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet {
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    background: #d0d1df;
+    text-indent: -9999px;
+    transition: all 0.4s;
+    position: relative;
+}
+
+.swiper-pagination-bullet::before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    width: 21px;
+    height: 21px;
+    transition: all 0.4s;
+    position: absolute;
+    border-radius: 100px;
+    border: 2px solid var(--heading-color);
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.swiper-pagination-bullet-active {
+    position: relative;
+    background: var(--heading-color) !important;
+}
+
+.swiper-pagination-bullet-active::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+/* swiper pagination end */
+
+/* star icon start */
+.ui-star {
+    color: #ecb014;
+}
+
+.ui-star-none {
+    color: #c4c5c6;
+}
+
+/* star icon end */
+
+/* collapse start */
+.ReactCollapse--collapse {
+    transition: height 500ms;
+}
+/* collapse end */
+
+/* shop gallery start */
+.ui-gallery img {
+    width: 100%;
+    border-radius: 18px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.ui-gallery-thumb {
+    margin-top: 16px;
+}
+.ui-gallery-thumb img {
+    width: 130px;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* shop gallery end */
+
+.optech-map-page {
+    height: 650px;
+}
+
+/* mobile nav start */
+.css-1wvake5 {
+    border: initial !important;
+    width: 100% !important;
+}
+.css-dip3t8 {
+    background-color: initial !important;
+}
+/* mobile nav end */
