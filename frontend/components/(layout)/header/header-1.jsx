@@ -30,15 +30,17 @@ export default function Header1() {
                             <nav className="navbar site-navbar">
                                 {/* Brand Logo*/}
                                 <div className="brand-logo">
-                                    <Link href="/">
+                                    <Link href="/" style={{display: "flex"}}>
                                         <Image
-                                            height={31}
-                                            width={128}
+                                            height={50}
+                                            width={125}
                                             priority
-                                            src="/assets/images/logo/logo-dark.svg"
+                                            src="/assets/images/logo/System Cog.png"
                                             alt="logo"
                                             className="light-version-logo"
                                         />
+                                        {/* <span style={{fontWeight: 800, fontFamily: "sans-serif"
+                                        }}>System Cog</span> */}
                                     </Link>
                                 </div>
                                 <div className="menu-block-wrapper">

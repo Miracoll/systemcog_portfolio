@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function TopBar7() {
     return (
         <>
-            <div className="optech-header-top">
+            {/* <div className="optech-header-top">
                 <div className="container">
                     <div className="optech-header-info-wrap">
                         <div className="optech-header-info  dark-color">
@@ -32,7 +32,7 @@ export default function TopBar7() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

@@ -12,9 +12,8 @@ export default function Header8() {
     return (
         <>
             <header
-                className={`site-header optech-header-section site-header--menu-right optech-header-two ${
-                    isSticky ? "sticky-menu" : ""
-                }`}
+                className={`site-header optech-header-section site-header--menu-right optech-header-two ${isSticky ? "sticky-menu" : ""
+                    }`}
             >
                 {/* top bar start */}
                 <TopBar8 />
@@ -26,10 +25,10 @@ export default function Header8() {
                             <div className="brand-logo">
                                 <Link href="/home-8">
                                     <Image
-                                        height={31}
-                                        width={128}
+                                        height={50}
+                                        width={125}
                                         priority
-                                        src="/assets/images/logo/logo-white.svg"
+                                        src="/assets/images/logo/System Cog.png"
                                         alt="logo"
                                         className="light-version-logo"
                                     />
