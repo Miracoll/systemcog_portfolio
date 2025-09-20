@@ -4,7 +4,7 @@ import { sora } from "./fonts";
 
 export const metadata = {
     title: {
-        template: "Optech %s - IT Solution & Technology Theme",
+        template: "SystemCOG %s - IT Solution & Technology Theme",
     },
 };
 

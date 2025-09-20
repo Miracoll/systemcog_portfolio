@@ -1,40 +1,57 @@
+const childenNotInUse = [
+    {
+        label: "Main Demo",
+        href: '/'
+    },
+    {
+        label: "IT Solutions",
+        href: "/home-2",
+    },
+    {
+        label: "Tech Agency",
+        href: "/home-3",
+    },
+    {
+        label: "Startup Home",
+        href: "/home-4",
+    },
+    {
+        label: "IT Consulting",
+        href: "/home-5",
+    },
+    {
+        label: "Software Company",
+        href: "/home-6",
+    },
+    {
+        label: "Digital Agency",
+        href: "/home-7",
+    },
+    {
+        label: "Tech Company",
+        href: "/home-8",
+    },
+]
+
+const blogchildrennotinuse = [
+    {
+        label: "Blog",
+        href: "/blog",
+    },
+    {
+        label: "Blog Grid",
+        href: "/blog-grid"
+    },
+    {
+        label: "Blog Details",
+        href: "/blog-details",
+    },
+]
+
 const navigation = [
     {
         label: "Home",
-        children: [
-            {
-                label: "Main Demo",
-                href: "/",
-            },
-            {
-                label: "IT Solutions",
-                href: "/home-2",
-            },
-            {
-                label: "Tech Agency",
-                href: "/home-3",
-            },
-            {
-                label: "Startup Home",
-                href: "/home-4",
-            },
-            {
-                label: "IT Consulting",
-                href: "/home-5",
-            },
-            {
-                label: "Software Company",
-                href: "/home-6",
-            },
-            {
-                label: "Digital Agency",
-                href: "/home-7",
-            },
-            {
-                label: "Tech Company",
-                href: "/home-8",
-            },
-        ],
+        href: "/"
     },
     {
         label: "Pages",
@@ -132,20 +149,7 @@ const navigation = [
     },
     {
         label: "Blog",
-        children: [
-            {
-                label: "Blog",
-                href: "/blog",
-            },
-            {
-                label: "Blog Grid",
-                href: "/blog-grid",
-            },
-            {
-                label: "Blog Details",
-                href: "/blog-details",
-            },
-        ],
+        href: "/blog-grid",
     },
     { label: "Contact", href: "/contact" },
 ];

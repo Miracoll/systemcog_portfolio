@@ -26,11 +26,12 @@ export default function FooterInfo1() {
             <div className="optech-footer-textarea dark-color">
                 <Link href="/">
                     <Image
-                        height={36}
-                        width={150}
+                        height={50}
+                        width={125}
                         priority
-                        src="/assets/images/logo/logo-dark.svg"
+                        src="/assets/images/logo/System Cog.png"
                         alt="logo"
+                        className="light-version-logo"
                     />
                 </Link>
                 <p>
