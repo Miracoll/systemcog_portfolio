@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ member.name }} - {{ member.role }} at SystemCog{% endblock %}
+{% block description %}Meet {{ member.name }}, {{ member.role }} at SystemCog. {{ member.bio|truncatewords:25 }}{% endblock %}
+{% block keywords %}SystemCog {{ member.name }}, SystemCog team, {{ member.role }}, SystemCog staff, tech experts, software developers, IoT specialists, embedded systems engineers, technology consultants{% endblock %}
+{% block image %}{% static 'team/images/' %}{{ member.slug }}.png{% endblock %}
+{% block url %}https://www.systemcog.cc/team/{{ member.slug }}{% endblock %}
+{% block canonical %}https://www.systemcog.cc/team/{{ member.slug }}{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+      <div class="optech-team-single-wrap">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="optech-team-single-thumb" data-aos="fade-up" data-aos-duration="800">
+              <img src="{{member.image.url}}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <div class="optech-team-single-content">
+              <h2>{{member.name}}</h2>
+              <span>{{member.role}}</span>
+              <p>{{member.bio}}</p>
+              <div class="optech-footer-info dark-color">
+                <ul>
+                  <li><a href="tel:{{member.phone}}"><i class="ri-phone-fill"></i>{{member.phone}}</a></li>
+                  <li><a href="mailto:{{member.email}}"><i class="ri-mail-fill"></i>{{member.email}}</a></li>
+                </ul>
+              </div>
+              <div class="optech-extra-mt">
+                <div class="optech-social-icon-box style-two">
+                  <ul>
+                    <li>
+                      <a href="{{member.facebook}}">
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{member.linkedin}}">
+                        <i class="ri-linkedin-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{member.twitter}}">
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{member.instagram}}">
+                        <i class="ri-instagram-fill"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="optech-main-form p-0">
+              <h3>Fill The Contact Form</h3>
+              <p>Feel free to contact with us, we don’t spam your email</p>
+              {% include "blog/reach_out.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  {% include "blog/pre_footer.html" %}
+  <!-- End section -->
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% if messages %}
+<div class="alert alert-success" role="alert">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+<form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="optech-main-field">
+                <input type="text" placeholder="Your name" name="name" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="optech-main-field">
+                <input type="number" placeholder="Phone number" name="phone" required>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="optech-main-field">
+                <input type="email" placeholder="Email address" name="email" required>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="optech-main-field">
+                <textarea name="message" required placeholder="Write your message"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <button id="optech-main-form-btn" type="submit" data-text="Send Message"> <span class="btn-wraper">Send
+                    Message</span> </button>
+        </div>
+    </div>
+</form>

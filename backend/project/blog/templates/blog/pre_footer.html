@@ -1,0 +1,18 @@
+{% load static %}
+<div class="section bg-cover optech-section-padding"
+     style="background-image: url({% static bg|default:'assets/images/cta/cta-bg3.png' %})">
+  <div class="container">
+    <div class="optech-cta-wrap">
+      <div class="optech-cta-content center">
+        <h2>Let’s Build Something Extraordinary</h2>
+        <p>At SYSTEMCOG, we partner with businesses to create custom software, IoT, and embedded solutions that drive growth and innovation. 
+           Whether you need a mobile app, a web platform, or a connected system, we’re here to bring your ideas to life.</p>
+        <div class="optech-extra-mt" data-aos="fade-up" data-aos-duration="600">
+          <a class='optech-default-btn optech-white-btn' data-text='Let’s Start a Project' href='{% url "contact" %}'>
+            <span class="btn-wraper">Let’s Start a Project</span>
+          </a>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

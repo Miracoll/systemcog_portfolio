@@ -1,0 +1,74 @@
+{% load static %}
+<header class="site-header optech-header-section" id="sticky-menu">
+    <div class="optech-header-bottom bg-white">
+        <div class="container">
+            <nav class="navbar site-navbar">
+                <!-- Brand Logo-->
+                <div class="brand-logo">
+                    <a href='{% url "home" %}'>
+                        <img src="{% static 'assets/images/logo/logo-dark.svg' %}" alt="" class="light-version-logo">
+                    </a>
+                </div>
+                <div class="menu-block-wrapper">
+                    <div class="menu-overlay"></div>
+                    <nav class="menu-block" id="append-menu-header">
+                        <div class="mobile-menu-head">
+                            <div class="go-back">
+                                <i class="fa fa-angle-left"></i>
+                            </div>
+                            <div class="current-menu-title"></div>
+                            <div class="mobile-menu-close">&times;</div>
+                        </div>
+                        <ul class="site-menu-main">
+                            <li class="nav-item">
+                                <a class='nav-link-item' href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class='nav-link-item' href='{% url "about" %}'>About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class='nav-link-item' href='{% url "portfolio" %}'>Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class='nav-link-item' href='{% url "blog" %}'>Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class='nav-link-item' href='{% url "contact" %}'>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
+                    <div class="optech-header-icon">
+                        <div class="optech-header-search">
+                            <i class="ri-search-line"></i>
+                        </div>
+                        <a class='optech-default-btn optech-header-btn' data-text='Get in Touch'
+                            href='{% url "contact" %}'><span class="btn-wraper">Get in Touch</span></a>
+                    </div>
+                </div>
+                <!-- mobile menu trigger -->
+                <div class="mobile-menu-trigger">
+                    <span></span>
+                </div>
+                <!--/.Mobile Menu Hamburger Ends-->
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="optech-header-search-section">
+        <div class="container">
+            <div class="optech-header-search-box">
+                <input type="search" placeholder="Search here...">
+                <button id="header-search" type="button"><i class="ri-search-line"></i></button>
+                <p>Type above and press Enter to search. Press Close to cancel.</p>
+            </div>
+        </div>
+        <div class="optech-header-search-close">
+            <i class="ri-close-line"></i>
+        </div>
+    </div>
+</header>
+<div class="search-overlay"></div>
+<!--End landex-header-section -->

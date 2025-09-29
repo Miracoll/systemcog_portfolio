@@ -1,0 +1,453 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block title %}Home - SystemCog{% endblock %}
+{% block description %}Welcome to SystemCog, your go-to source for the latest tech insights, tutorials, and reviews.
+Explore our blog for in-depth articles on software development, cybersecurity, AI, and more.{% endblock %}
+{% block keywords %}SystemCog, tech blog, software development, cybersecurity, AI, machine learning, programming
+tutorials, tech reviews{% endblock %}
+
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+
+{% block url %}https://www.systemcog.cc/{% endblock %}
+
+{% block canonical %}https://www.systemcog.cc/{% endblock %}
+
+{% block content %}
+<div class="optech-hero-section bg-cover" style="background-image: url({% static 'assets/images/hero/bg1.png' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="optech-hero-content">
+                    <h5>We provide professional IT services</h5>
+                    <h1>Delivering tech solutions for your startups</h1>
+                    <p>We transform businesses of most major sectors with powerful and adaptable digital solutions that
+                        satisfy the needs of today.</p>
+                    <div class="optech-extra-mt">
+                        <div class="optech-btn-wrap">
+                            <a class='optech-default-btn' data-text='Work With Us' href='{% url "contact" %}'><span
+                                    class="btn-wraper">Work With Us</span></a>
+                            <a class='optech-default-btn optech-white-btn' data-text='View Services'
+                                href='{% url "service" %}'> <span class="btn-wraper">View Services</span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="optech-hero-thumb" data-aos="fade-up" data-aos-duration="700">
+                    <img src="{% static 'assets/images/hero/hero-thumb1.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section extra-padding-tb">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-6">
+                <div class="optech-iconbox-wrap2">
+                    <div class="optech-iconbox-icon2">
+                        <img src="{% static 'assets/images/iconbox/icon1.svg' %}" alt="Expert Team Icon">
+                    </div>
+                    <div class="optech-iconbox-data2">
+                        <h5>Expert Development Team</h5>
+                        <p>Our engineers specialize in software, IoT, and embedded systems, delivering innovative and reliable solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="optech-iconbox-wrap2">
+                    <div class="optech-iconbox-icon2">
+                        <img src="{% static 'assets/images/iconbox/icon2.svg' %}" alt="Support Icon">
+                    </div>
+                    <div class="optech-iconbox-data2">
+                        <h5>Dedicated Support</h5>
+                        <p>We provide ongoing assistance and maintenance to ensure your systems run smoothly around the clock.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="optech-iconbox-wrap2">
+                    <div class="optech-iconbox-icon2">
+                        <img src="{% static 'assets/images/iconbox/icon3.svg' %}" alt="Pricing Icon">
+                    </div>
+                    <div class="optech-iconbox-data2">
+                        <h5>Cost-Effective Solutions</h5>
+                        <p>We design scalable, high-quality technology solutions that fit your budget without compromising performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="container">
+    <div class="optech-divider"></div>
+</div>
+<!-- End -->
+
+<div class="section large-padding-tb overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="optech-thumb extra-mr">
+                    <img data-aos="fade-up" data-aos-duration="600" src="{% static 'assets/images/v1/thumb1.png' %}"
+                        alt="">
+                    <div class="optech-thumb-position" data-aos="fade-up" data-aos-duration="800">
+                        <img src="{% static 'assets/images/v1/thumb2.png' %}" alt="">
+                    </div>
+                    <div class="optech-shape1">
+                        <img src="{% static 'assets/images/shape/shape1.svg' %}" alt="">
+                    </div>
+                    <div class="optech-shape2">
+                        <img src="{% static 'assets/images/shape/shape2.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-end">
+                <div class="optech-default-content ml40">
+                    <h2>Over a Decade of Transforming Ideas into Technology</h2>
+                    <h5>We’ve earned the trust of businesses by delivering reliable, innovative, and scalable digital solutions.</h5>
+                    <p>From embedded systems and IoT integration to web and mobile applications, SystemCog combines technical expertise with creativity to build solutions that drive real business growth. Our focus is always on delivering value and long-term success for our clients.</p>
+                    <div class="optech-extra-mt">
+                        <a class='optech-default-btn' data-text='More About Us' href='{% url "about" %}'>
+                            <span class="btn-wraper">More About Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="sectin bg-light1 optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Our awesome services to give you success</h2>
+        </div>
+    </div>
+    <div class="optech-4column-slider" data-aos="fade-up" data-aos-duration="800">
+        {% for service in services %}
+        <div class="optech-iconbox-wrap">
+            <div class="optech-iconbox-icon">
+                <img src="{{service.icon.url}}" alt="">
+            </div>
+            <div class="optech-iconbox-data">
+                <!-- <h5>Data Tracking <br> Security</h5> -->
+                <h5>{{service.name}}</h5>
+                <p>{{service.description|safe}}</p>
+                <a class='optech-icon-btn' href='{% url "service_detail" service.slug %}'><i class="icon-show ri-arrow-right-line"></i>
+                    <span>Learn More</span> <i class="icon-hide ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section large-padding-tb4 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-lg-2">
+                <div class="optech-thumb extra-ml">
+                    <img data-aos="fade-up" data-aos-duration="600" src="{% static 'assets/images/v1/thumb3.png' %}"
+                        alt="">
+                    <div class="optech-thumb-position2" data-aos="fade-up" data-aos-duration="800">
+                        <img src="{% static 'assets/images/v1/thumb4.png' %}" alt="">
+                    </div>
+                    <div class="optech-shape3">
+                        <img src="{% static 'assets/images/shape/shape3.svg' %}" alt="">
+                    </div>
+                    <div class="optech-shape4">
+                        <img src="{% static 'assets/images/shape/shape4.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-end">
+                <div class="optech-default-content mr40">
+                    <h2>Increasing business success with technology</h2>
+                    <p>We empower businesses to grow by delivering innovative IT solutions, 
+                       seamless digital experiences, and measurable results that drive success.</p>
+                
+                    <div class="optech-extra-mt">
+                        <section id="first-sec"></section>
+                
+                        <div class="optech-progress-item">
+                            <div class="progress-bar" data-percentage="86%">
+                                <div class="progress-title-holder">
+                                    <div class="progress-title">IT Solution & Management</div>
+                                    <div class="progress-number-wrapper">
+                                        <div class="progress-number-mark">
+                                            <div class="percent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-content-outter">
+                                    <div class="progress-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="optech-progress-item">
+                            <div class="progress-bar" data-percentage="72%">
+                                <div class="progress-title-holder">
+                                    <div class="progress-title">Website & App Development</div>
+                                    <div class="progress-number-wrapper">
+                                        <div class="progress-number-mark">
+                                            <div class="percent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-content-outter">
+                                    <div class="progress-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="optech-progress-item">
+                            <div class="progress-bar" data-percentage="83%">
+                                <div class="progress-title-holder">
+                                    <div class="progress-title">SEO & Digital Marketing</div>
+                                    <div class="progress-number-wrapper">
+                                        <div class="progress-number-mark">
+                                            <div class="percent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-content-outter">
+                                    <div class="progress-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section optech-section-padding bg-light1">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Explore our recent projects</h2>
+        </div>
+        <div class="row">
+            {% for project in portfolios %}
+            <div class="{% if forloop.last %}col-xl-8{% else %}col-xl-4 col-md-6{% endif %}" data-aos="fade-up"
+                data-aos-duration="{% if forloop.last %}700{% else %}500{% endif %}">
+                <div class="optech-portfolio-wrap">
+                    <div class="optech-portfolio-thumb">
+                        <img src="{% if forloop.last %}{{ project.image.url }}{% else %}{{ project.short_image.url }}{% endif %}" alt="{{ project.name }}">
+                        <!-- <img src="{% static 'assets/images/p1/p3.png' %}" alt=""> -->
+                        <a class='optech-portfolio-btn' href="{% url 'portfolio_detail' project.slug %}">
+                            <span class="p-btn-wraper"><i class="ri-arrow-right-up-line"></i></span>
+                        </a>
+                        <div class="optech-portfolio-data">
+                            <a href="{{ project.get_absolute_url }}">
+                                <h4>{{ project.name }}</h4>
+                            </a>
+                            <p>
+                                {% for category in project.category.all %}
+                                    {{ category.name }}{% if not forloop.last %}, {% endif %}
+                                {% empty %}
+                                    Uncategorized
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="optech-center-btn">
+                <a class='optech-default-btn' data-text='View Our All Works' href="{% url 'portfolio' %}">
+                    <span class="btn-wraper">View Our All Works</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section optech-section-padding2 dark-bg">
+    <div class="container">
+        <div class="optech-section-title light-color center">
+            <h2>Our expert team is always ready to help you</h2>
+        </div>
+        <div class="row">
+            {% for member in teams %}
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="400">
+                <div class="optech-team-wrap">
+                    <div class="optech-team-thumb">
+                        <img src="{{member.image.url}}" alt="">
+                        <div class="optech-social-icon-box style-three position">
+                            <ul>
+                                <li>
+                                    <a href="{{member.linkedin}}">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{member.twitter}}">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{member.instagram}}">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="optech-team-data">
+                        <a href='{% url "team_detail" member.slug %}'>
+                            <h5>{{member.name}}</h5>
+                        </a>
+                        <p>{{member.role}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section optech-section-padding bg-light1">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>What Our Clients Say About Us</h2>
+        </div>
+        <div class="optech-2column-slider" data-aos="fade-up" data-aos-duration="600">
+            
+            <!-- Testimonial 1 -->
+            <div class="optech-t-box">
+                <div class="optech-t-quote">
+                    <img src="{% static 'assets/images/v1/quote.svg' %}" alt="quote">
+                </div>
+                <div class="optech-t-data">
+                    <p>“Working with this team has been an amazing experience. They not only delivered on time but
+                        also exceeded our expectations in terms of quality and support. Highly recommended!”</p>
+                    <div class="optech-t-rating">
+                        <ul>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="optech-t-author">
+                        <h5>Brooklyn Simmons</h5>
+                        <span>Lead Developer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="optech-t-box">
+                <div class="optech-t-quote">
+                    <img src="{% static 'assets/images/v1/quote.svg' %}" alt="quote">
+                </div>
+                <div class="optech-t-data">
+                    <p>“Their IT solutions transformed the way we operate. From web development to ongoing support,
+                        everything was handled professionally. The results speak for themselves.”</p>
+                    <div class="optech-t-rating">
+                        <ul>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="optech-t-author">
+                        <h5>Alexander Cameron</h5>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="optech-t-box">
+                <div class="optech-t-quote">
+                    <img src="{% static 'assets/images/v1/quote.svg' %}" alt="quote">
+                </div>
+                <div class="optech-t-data">
+                    <p>“Excellent customer service and reliable solutions! They took time to understand our needs and
+                        provided the perfect technology to grow our business.”</p>
+                    <div class="optech-t-rating">
+                        <ul>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                            <li><img src="{% static 'assets/images/v1/rating.svg' %}" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="optech-t-author">
+                        <h5>Sophia Turner</h5>
+                        <span>Project Manager</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section optech-section-padding2">
+    <div class="container">
+        <div class="optech-section-title">
+            <div class="row">
+                <div class="col-xxl-5 col-lg-7">
+                    <h2>Recent blog & articles about technology</h2>
+                </div>
+                <div class="col-xxl-7 col-lg-5 d-flex align-items-center justify-content-end">
+                    <div class="optech-title-btn">
+                        <a class='optech-default-btn' data-text='View All Posts' href='{% url "blog" %}'><span
+                                class="btn-wraper">View All Posts</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+                <div class="optech-blog-wrap">
+                    <a href='{% url "blog_detail" blog.slug %}'>
+                        <div class="optech-blog-thumb">
+                            <img src="{% static 'assets/images/blog/blog6.png' %}" alt="">
+                        </div>
+                    </a>
+                    <div class="optech-blog-content reduced-padding">
+                        <div class="optech-blog-meta">
+                            <ul>
+                                <li><a href='{% url "blog_detail" blog.slug %}'>{{blog.category}}</a></li>
+                                <li><a href='{% url "blog_detail" blog.slug %}'>{{blog.created_at|date:"j M Y"}}</a></li>
+                            </ul>
+                        </div>
+                        <a href='{% url "blog_detail" blog.slug %}'>
+                            <h4>{{blog.title}}</h4>
+                        </a>
+                        <a class='optech-icon-btn' href='{% url "blog_detail" blog.slug %}'><i class="icon-show ri-arrow-right-line"></i>
+                            <span>Learn More</span> <i class="icon-hide ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" with bg='assets/images/cta/cta-bg2.png' %}
+<!-- End section -->
+{% endblock content %}

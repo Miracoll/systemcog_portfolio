@@ -1,0 +1,69 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Blog - SystemCog{% endblock %}
+{% block description %}Read insightful articles, tutorials, and updates from SystemCog's blog. Stay informed on
+technology trends, software development, embedded systems, IoT, and innovative solutions.{% endblock %}
+{% block keywords %}SystemCog, portfolio, tech solutions, projects, case studies, client success, innovation, technology
+services{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/blog{% endblock %}
+{% block canonical %}https://www.systemcog.cc/blog{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding optech-blog-grid">
+    <div class="container">
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+                <div class="optech-blog-wrap">
+                    <a href='{% url "blog_detail" blog.slug %}'>
+                        <div class="optech-blog-thumb">
+                            <img src="{{blog.short_image.url}}" alt="">
+                        </div>
+                    </a>
+                    <div class="optech-blog-content">
+                        <div class="optech-blog-meta">
+                            <ul>
+                                <li><a href='{% url "blog_detail" blog.slug %}'>{{blog.category.name}}</a></li>
+                                <li><a href='{% url "blog_detail" blog.slug %}'>{{blog.created_at|date:"j F Y"}}</a></li>
+                            </ul>
+                        </div>
+                        <a href='{% url "blog_detail" blog.slug %}'>
+                            <h4>{{blog.title}}</h4>
+                        </a>
+                        <a class='optech-icon-btn' href='{% url "blog_detail" blog.slug %}'><i class="icon-show ri-arrow-right-line"></i>
+                            <span>Learn More</span> <i class="icon-hide ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="optech-navigation">
+            <nav class="navigation pagination center" aria-label="Posts">
+                <div class="nav-links">
+                    {% if blogs.has_previous %}
+                    <a class="prev page-numbers" href="?page={{ blogs.previous_page_number }}">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                    {% endif %}
+        
+                    {% for num in blogs.paginator.page_range %}
+                        {% if blogs.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% else %}
+                            <a class="page-numbers" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+        
+                    {% if blogs.has_next %}
+                    <a class="next page-numbers" href="?page={{ blogs.next_page_number }}">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>        
+    </div>
+</div>
+<!-- End section -->
+{% endblock content %}

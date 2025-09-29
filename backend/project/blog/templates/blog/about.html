@@ -1,0 +1,223 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}About Us - SystemCog{% endblock %}
+{% block description %}Learn more about SystemCog, our mission, vision, and the team behind our innovative tech
+solutions. Discover how we strive to empower businesses through cutting-edge technology and exceptional service.{% endblock description %}
+{% block keywords %}SystemCog, about us, company mission, vision, tech solutions, team, innovation, business
+technology{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/about{% endblock %}
+{% block canonical %}https://www.systemcog.cc/about{% endblock %}
+
+{% block content %}
+
+<div class="section large-padding-tb4 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="optech-thumb extra-mr">
+                    <img data-aos="fade-up" data-aos-duration="600" src="{% static 'assets/images/v2/thumb1.png' %}"
+                        alt="">
+                    <div class="optech-thumb-position" data-aos="fade-up" data-aos-duration="800">
+                        <img src="{% static 'assets/images/v2/thumb2.png' %}" alt="">
+                    </div>
+                    <div class="optech-shape1">
+                        <img src="{% static 'assets/images/shape/shape1.svg' %}" alt="">
+                    </div>
+                    <div class="optech-shape2">
+                        <img src="{% static 'assets/images/shape/shape2.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="optech-default-content ml40">
+                    <h2>Innovative Technology Solutions for Modern Businesses</h2>
+                    <p>At SYSTEMCOG, we design and deliver powerful digital solutions that integrate software, IoT, and embedded systems to help businesses stay competitive, efficient, and future-ready.</p>
+                    <div class="optech-icon-list">
+                        <ul>
+                            <li><i class="ri-check-line"></i>Custom Web & Mobile Application Development</li>
+                            <li><i class="ri-check-line"></i>IoT & Embedded Systems Integration</li>
+                            <li><i class="ri-check-line"></i>Scalable, Secure, and Future-Ready Solutions</li>
+                        </ul>
+                    </div>
+                    <div class="optech-extra-mt">
+                        <a class='optech-default-btn' data-text='More About Us' href='{% url "about" %}'>
+                            <span class="btn-wraper">More About Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="section large-padding-tb2 overflow-hidden bg-light1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-lg-2">
+                <div class="optech-thumb extra-ml">
+                    <img data-aos="fade-up" data-aos-duration="600" src="{% static 'assets/images/v3/thumb3.png' %}"
+                        alt="">
+                    <div class="optech-thumb-position2" data-aos="fade-up" data-aos-duration="800">
+                        <img src="{% static 'assets/images/v3/thumb4.png' %}" alt="">
+                    </div>
+                    <div class="optech-shape3">
+                        <img src="{% static 'assets/images/shape/shape3.svg' %}" alt="">
+                    </div>
+                    <div class="optech-shape4">
+                        <img src="{% static 'assets/images/shape/shape2.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="optech-default-content mr40">
+                    <h2>Smart IT Solutions & Services for Startups</h2>
+                    <div class="optech-extra-mt">
+                        <div class="optech-iconbox-wrap2">
+                            <div class="optech-iconbox-icon2 bg-white">
+                                <img src="{% static 'assets/images/iconbox/icon10.svg' %}" alt="Business Solutions Icon">
+                            </div>
+                            <div class="optech-iconbox-data2">
+                                <a href='{% url "contact" %}'>
+                                    <h5>Tailored Solutions for Growth</h5>
+                                </a>
+                                <p>We build scalable software, IoT, and web platforms designed to help startups launch faster and grow smarter.</p>
+                            </div>
+                        </div>
+                        <div class="optech-iconbox-wrap2">
+                            <div class="optech-iconbox-icon2 bg-white">
+                                <img src="{% static 'assets/images/iconbox/icon1.svg' %}" alt="Expert Team Icon">
+                            </div>
+                            <div class="optech-iconbox-data2">
+                                <a href='{% url "team" %}'>
+                                    <h5>Experienced Development Teams</h5>
+                                </a>
+                                <p>Our engineers and designers bring deep expertise in software, embedded systems, and mobile apps to every project.</p>
+                            </div>
+                        </div>
+                        <div class="optech-iconbox-wrap2 mb-0">
+                            <div class="optech-iconbox-icon2 bg-white">
+                                <img src="{% static 'assets/images/iconbox/icon2.svg' %}" alt="Support Icon">
+                            </div>
+                            <div class="optech-iconbox-data2">
+                                <a href='{% url "contact" %}'>
+                                    <h5>Reliable Client Support</h5>
+                                </a>
+                                <p>We provide ongoing support and maintenance to ensure your technology works seamlessly as your business grows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="optech-counter-section3">
+    <div class="container">
+        <div id="optech-counter"></div>
+        <div class="optech-counter-wrap3">
+            <div class="optech-counter-data3" data-aos="fade-up" data-aos-duration="400">
+                <div class="optech-counter-icon3">
+                    <img src="{% static 'assets/images/v5/icon1.svg' %}" alt="">
+                </div>
+                <div class="optech-counter-right">
+                    <div class="optech-counter-number3">
+                        <span data-percentage="250" class="optech-counter"></span>+
+                    </div>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+            <div class="optech-counter-data3" data-aos="fade-up" data-aos-duration="600">
+                <div class="optech-counter-icon3">
+                    <img src="{% static 'assets/images/v5/icon2.svg' %}" alt="">
+                </div>
+                <div class="optech-counter-right">
+                    <div class="optech-counter-number3">
+                        <span data-percentage="150" class="optech-counter"></span>+
+                    </div>
+                    <p>Finished Projects</p>
+                </div>
+            </div>
+            <div class="optech-counter-data3" data-aos="fade-up" data-aos-duration="800">
+                <div class="optech-counter-icon3">
+                    <img src="{% static 'assets/images/v5/icon3.svg' %}" alt="">
+                </div>
+                <div class="optech-counter-right">
+                    <div class="optech-counter-number3">
+                        <span data-percentage="20" class="optech-counter"></span>+
+                    </div>
+                    <p>Skilled Experts</p>
+                </div>
+            </div>
+            <div class="optech-counter-data3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="optech-counter-icon3">
+                    <img src="{% static 'assets/images/v5/icon4.svg' %}" alt="">
+                </div>
+                <div class="optech-counter-right">
+                    <div class="optech-counter-number3">
+                        <span data-percentage="90" class="optech-counter"></span>%
+                    </div>
+                    <p>Clients Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+<div class="container">
+    <div class="optech-divider"></div>
+</div>
+<!-- End -->
+
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Our expert team is always ready to help you</h2>
+        </div>
+    </div>
+    <div class="optech-4column-slider" data-aos="fade-up" data-aos-duration="800">
+        {% for member in team_members %}
+        <div class="optech-team-wrap border_all mb-0">
+            <div class="optech-team-thumb">
+                <img src="{{member.image.url}}" alt="">
+                <div class="optech-social-icon-box style-three position">
+                    <ul>
+                        <li>
+                            <a href="{{member.linkedin}}">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{member.twitter}}">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{member.instagram}}">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="optech-team-data">
+                <a href='{% url "team_detail" member.slug %}'>
+                    <h5>{{member.name}}</h5>
+                </a>
+                <p>{{member.role}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- End section -->
+{% include "blog/contact_content.html" with bg_color="bg-light1" %}
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}

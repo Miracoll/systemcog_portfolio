@@ -1,0 +1,201 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ blog.title }} - SystemCog{% endblock %}
+{% block description %}Read {{ blog.title }} on SystemCog Blog. {{ blog.content|truncatewords:25 }}{% endblock %}
+{% block keywords %}SystemCog blog, {{ blog.title }}, technology articles, software development tutorials, IoT projects,
+embedded systems, web development, mobile apps, programming guides, innovation{% endblock %}
+{% block image %}{{ blog.image.url }}{% endblock %}
+{% block url %}https://www.systemcog.cc/blog/{{ blog.slug }}{% endblock %}
+{% block canonical %}https://www.systemcog.cc/blog/{{ blog.slug }}{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="optech-blog-thumb single-blog" data-aos="fade-up" data-aos-duration="800">
+                    <img src="{{blog.image.url}}" alt="">
+                </div>
+                <div class="optech-single-post-content-wrap">
+                    <div class="optech-single-post-meta">
+                        <ul>
+                            <li><a href="#"><i class="ri-calendar-fill"></i> {{blog.created_at|date:"j M Y"}}</a></li>
+                            <li><a href="#"><i class="ri-bookmark-fill"></i> {{blog.category}}</a></li>
+                            <li>
+                                <a href="#">
+                                  <i class="ri-chat-2-fill"></i>
+                                  {% if blog.number_of_comments == 0 %}
+                                    No Comments
+                                  {% else %}
+                                    {{ blog.number_of_comments }} Comment{{ blog.number_of_comments|pluralize:"s" }}
+                                  {% endif %}
+                                </a>
+                              </li>                              
+                        </ul>
+                    </div>
+                    <div class="entry-content">
+                        {{ blog.content|safe }}
+
+                        {% if blog.quote %}
+                        <blockquote> <img src="{% static 'assets/images/blog/quote.svg' %}" alt=""> {{blog.quote}} ”
+                        </blockquote>
+                        {% endif %}
+
+                        <div class="optech-single-post-tag-wrap">
+                            <div class="optech-blog-tags">
+                                <ul>
+                                    {% for i in blog.tags.all %}
+                                    <li><a href="#">{{ i.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="optech-post-navigation">
+                            {% if previous_blog %}
+                            <a class='nav-previous' href='{% url "blog_detail" previous_blog.slug %}'>
+                                <i class="ri-arrow-left-line"></i> Perv Post
+                            </a>
+                            {% else %}
+                            <span></span>
+                            {% endif %}
+                            {% if next_blog %}
+                            <a class='nav-next' href='{% url "blog_detail" next_blog.slug %}'>
+                                Next Post <i class="ri-arrow-right-line"></i>
+                            </a>
+                            {% else %}
+                            <span></span>
+                            {% endif %}
+                        </div>
+
+                        <div class="optech-post-comment">
+                            <h3>Comments:</h3>
+                            <ul>
+                                {% for comment in comments %}
+                                    <li>
+                                        <div class="optech-post-comment-wrap">
+                                            <div class="optech-post-comment-thumb">
+                                                <img src="{% static 'assets/images/team/team1.png' %}" alt="">
+                                            </div>
+                                            <div class="optech-post-comment-data">
+                                                <p>{{ comment.content }}</p>
+                                                <strong>{{ comment.name }}</strong>
+                                                <span>{{ comment.created_at|date:"F d, Y" }}</span>
+                                                <!-- <a class="optech-comment-reply" href="#" data-comment-id="{{ comment.id }}">
+                                                    <i class="ri-reply-fill"></i> Reply
+                                                </a> -->
+                                            </div>
+                                        </div>
+                        
+                                        {# Render replies #}
+                                        {% if comment.replies.all %}
+                                            <ul class="children">
+                                                {% for reply in comment.replies.all %}
+                                                    <li>
+                                                        <div class="optech-post-comment-wrap">
+                                                            <div class="optech-post-comment-thumb">
+                                                                <img src="{% static 'assets/images/team/team2.png' %}" alt="">
+                                                            </div>
+                                                            <div class="optech-post-comment-data">
+                                                                <p>{{ reply.content }}</p>
+                                                                <strong>{{ reply.name }}</strong>
+                                                                <span>{{ reply.created_at|date:"F d, Y" }}</span>
+                                                                <!-- <a class="optech-comment-reply" href="#" data-comment-id="{{ reply.id }}">
+                                                                    <i class="ri-reply-fill"></i> Reply
+                                                                </a> -->
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% empty %}
+                                    <p>No comments yet. Be the first to comment!</p>
+                                {% endfor %}
+                            </ul>
+                        </div>                                              
+                        <div class="optech-comment-box">
+                            <h3>Leave a comments:</h3>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="optech-comment-box-form">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="optech-comment-form">
+                                                <input type="text" placeholder="Your Name*" name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="optech-comment-form">
+                                                <input type="email" placeholder="Email Address*" name="email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="optech-comment-form">
+                                        <textarea name="content" placeholder="Write us your comment" required></textarea>
+                                    </div>
+                                    <!-- <div class="optech-check">
+                                        <input type="checkbox" id="css">
+                                        <label for="css">Save my name, email, and website in this browser for the next
+                                            time I comment.</label>
+                                    </div> -->
+                                    <button id="optech-default-btn" type="submit" data-text="Send Message"> <span
+                                            class="btn-wraper">Send Message</span> </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="optech-blog-sidebar">
+                    <div class="optech-blog-widgets">
+                        <h5>Search</h5>
+                        <form action="#">
+                            <div class="optech-search-box">
+                                <input type="search" placeholder="Type to search...">
+                                <button id="optech-search-btn" type="button"><i class="ri-search-line"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="optech-blog-widgets">
+                        <h5>Categories</h5>
+                        <div class="optech-blog-categorie">
+                            <ul>
+                                {% for category in categories %}
+                                <li><a href="#">{{ category.name }}<span>({{ category.blogs.count }})</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="optech-blog-widgets">
+                        <h5>Recent Posts</h5>
+                        {% for recent_blog in recent_blogs %}
+                        <a class='optech-recent-post-item' href='{% url "blog_detail" recent_blog.slug %}'>
+                            <div class="optech-recent-post-thumb">
+                                <img src="{% static 'assets/images/blog/recent-post1.png' %}" alt="">
+                            </div>
+                            <div class="optech-recent-post-data">
+                                <p>{{recent_blog.title}}</p>
+                                <span>{{recent_blog.created_at|date:"j M Y"}}</span>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="optech-blog-widgets">
+                        <h5>Tags</h5>
+                        <div class="optech-blog-tags">
+                            <ul>
+                                {% for tag in blog.tags.all %}
+                                <li><a href="#">{{ tag.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

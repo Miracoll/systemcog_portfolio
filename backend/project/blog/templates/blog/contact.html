@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Contact Us - SystemCog{% endblock %}
+{% block description %}Get in touch with SystemCog for inquiries, collaborations, or project discussions. We are here to
+provide expert guidance on software development, IoT, embedded systems, and technology solutions.{% endblock %}
+{% block keywords %}SystemCog contact, contact SystemCog, get in touch SystemCog, software development inquiries, IoT
+project contact, embedded systems support, tech solutions contact{% endblock %}
+{% block image %}{% static 'contact/images/systemcog-contact.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/contact{% endblock %}
+{% block canonical %}https://www.systemcog.cc/contact{% endblock %}
+
+{% block content %}
+{% include 'blog/contact_content.html' %}
+<!-- End section -->
+
+<!-- <div class="optech-map-page">
+    <div id="map"></div>
+</div> -->
+<!-- End section -->
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% load static %}
+<footer class="optech-footer-section {{ extra_footer_class|default:'dark-bg' }}">
+    <div class="container">
+        <div class="optech-footer-top optech-section-padding">
+            <div class="row">
+                <div class="col-xl-4 col-lg-12">
+                    <div class="optech-footer-textarea {{custom|default:'light-color' }}">
+                        <a href='index.html'>
+                            <img src="{% static logo|default:'assets/images/logo/logo-white.svg' %}" alt="">
+                        </a>
+                        <p>Innovative software, IoT, and embedded solutions tailored to power your business growth.
+                        </p>
+                        <div class="optech-social-icon-box">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 offset-xl-1 col-md-4">
+                    <div class="optech-footer-menu {{custom}}">
+                        <div class="optech-footer-title {{custom}}">
+                            <h5>Quick Links</h5>
+                        </div>
+                        <ul>
+                            <li><a href='{% url "about" %}'>About Us</a></li>
+                            <li><a href='{% url "team" %}'>Our Team</a></li>
+                            <li><a href='{% url "portfolio" %}'>Portfolio</a></li>
+                            <li><a href='{% url "blog" %}'>Blogs</a></li>
+                            <li><a href='{% url "contact" %}'>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-5">
+                    <div class="optech-footer-menu {{custom}}">
+                        <div class="optech-footer-title {{custom}}">
+                            <h5>Services</h5>
+                        </div>
+                        <ul>
+                            {% for service in services %}
+                            <li><a href="{% url 'service_detail' service.slug %}">{{ service.name }}</a></li>
+                            {% empty %}
+                            <li><a href="#">No services available</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3">
+                    <div class="optech-footer-menu {{custom}} mb-0">
+                        <div class="optech-footer-title {{custom}}">
+                            <h5>Information</h5>
+                        </div>
+                        <ul>
+                            <li><a href="#">Working Process</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Faqs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="optech-footer-bottom center">
+            <div class="optech-copywright {{custom}}">
+                <p> Copyright © {% now "Y" %} SystemCog. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

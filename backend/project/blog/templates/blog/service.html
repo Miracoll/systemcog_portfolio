@@ -1,0 +1,100 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Services - SystemCog{% endblock %}
+{% block description %}Explore SystemCog’s professional services including custom software development, IoT integration, embedded systems, and mobile & web application solutions tailored to empower your business.{% endblock %}
+{% block keywords %}SystemCog services, custom software solutions, IoT development, embedded systems, mobile apps, web applications, technology consulting, business digital transformation{% endblock %}
+{% block image %}{% static 'services/images/systemcog-services.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/services{% endblock %}
+{% block canonical %}https://www.systemcog.cc/services{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding5">
+    <div class="container">
+      <div class="optech-section-title center">
+        <h2>Our Proven Process to Drive Your Success</h2>
+      </div>
+      <div class="row z-index">
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+          <div class="optech-numberbox-wrap">
+            <div class="optech-numberbox-icon">
+              <img src="{% static 'assets/images/v2/illustration1.svg' %}" alt="Planning Icon">
+            </div>
+            <div class="optech-numberbox-data">
+              <span>01</span>
+              <h4>Initiation & Planning</h4>
+              <p>We begin by understanding your goals, gathering requirements, and creating a clear roadmap to deliver impactful solutions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="optech-numberbox-wrap">
+            <div class="optech-numberbox-icon">
+              <img src="{% static 'assets/images/v2/illustration2.svg' %}" alt="Development Icon">
+            </div>
+            <div class="optech-numberbox-data">
+              <span>02</span>
+              <h4>Execution & Development</h4>
+              <p>Our team builds secure, scalable, and user-friendly solutions—whether software, IoT, embedded, or mobile applications.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+          <div class="optech-numberbox-wrap">
+            <div class="optech-numberbox-icon">
+              <img src="{% static 'assets/images/v2/illustration3.svg' %}" alt="Testing Icon">
+            </div>
+            <div class="optech-numberbox-data">
+              <span>03</span>
+              <h4>Testing & Maintenance</h4>
+              <p>We ensure quality with rigorous testing and provide long-term support to keep your solutions secure and up to date.</p>
+            </div>
+          </div>
+        </div>
+        <div class="optech-line">
+          <img src="{% static 'assets/images/v2/line.png' %}" alt="Process Line">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End section -->
+  <div class="section optech-section-padding2 bg-light1">
+    <div class="container">
+      <div class="optech-section-title center">
+        <h2>Our Services Designed to Empower Your Business</h2>
+      </div>
+      <div class="row">
+        {% for service in services %}
+        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="600">
+          <div class="optech-iconbox-wrap style-two">
+            <div class="optech-iconbox-icon">
+              <img src="{% static 'assets/images/iconbox/icon4.svg' %}" alt="{{service.name}} Icon">
+            </div>
+            <div class="optech-iconbox-data">
+              <h5>{{service.name}}</h5>
+              <p>{{service.description|safe}}</p>
+              <a class='optech-icon-btn' href='{% url "service_detail" service.slug %}'><i class="icon-show ri-arrow-right-line"></i> <span>Learn More</span> <i class="icon-hide ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section bg-cover optech-section-padding" style="background-image: url({% static 'assets/images/cta/cta-bg3.png' %})">
+    <div class="container">
+      <div class="optech-cta-wrap">
+        <div class="optech-cta-content center">
+          <h2>Let’s Build the Future Together</h2>
+          <p>From idea to execution, SystemCog delivers solutions that transform businesses through technology, innovation, and expertise.</p>
+          <div class="optech-extra-mt" data-aos="fade-up" data-aos-duration="800">
+            <a class='optech-default-btn optech-white-btn' data-text='Let’s Start a Project' href='{% url "contact" %}'> <span class="btn-wraper">Let’s Start a Project</span> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+{% endblock content %}

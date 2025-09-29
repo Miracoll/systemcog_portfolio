@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}Our Team - SystemCog{% endblock %}
+{% block description %}Meet the dedicated team at SystemCog, a leading software development company specializing in
+custom software, IoT, and embedded solutions. Our experts are committed to driving innovation and delivering exceptional
+results for your business.{% endblock %}
+{% block keywords %}SystemCog team, software developers, IoT specialists, embedded systems engineers, technology
+consultants, custom software solutions, business growth, innovation, tech experts{% endblock %}
+{% block image %}{% static 'team/images/systemcog-team.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/team{% endblock %}
+{% block canonical %}https://www.systemcog.cc/team{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding2">
+    <div class="container">
+        <div class="row">
+            {% for member in teams %}
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="400">
+                <div class="optech-team-wrap border_all">
+                    <div class="optech-team-thumb">
+                        <img src="{{member.image.url}}" alt="">
+                        <div class="optech-social-icon-box style-three position">
+                            <ul>
+                                <li>
+                                    <a href="{{member.linkedin}}">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{memeber.twitter}}">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{member.instagram}}">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="optech-team-data">
+                        <a href='{% url "team_detail" member.slug %}'>
+                            <h5>{{member.name}}</h5>
+                        </a>
+                        <p>{{member.role}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

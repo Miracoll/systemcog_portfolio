@@ -1,0 +1,101 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ service.name }} - SystemCog{% endblock %}
+{% block description %}Learn more about {{ service.name }} offered by SystemCog. {{ service.description|truncatewords:25
+}}{% endblock %}
+{% block keywords %}SystemCog {{ service.name }}, {{ service.name }} service, {{ service.name }} solutions, SystemCog
+technology services, software development, IoT, embedded systems, consulting{% endblock %}
+{% block image %}{% static 'services/images/' %}{{ service.slug }}.png{% endblock %}
+{% block url %}https://www.systemcog.cc/services/{{ service.slug }}{% endblock %}
+{% block canonical %}https://www.systemcog.cc/services/{{ service.slug }}{% endblock %}
+{% block extra_head %}
+<style>
+  /* Target the UL/OL only */
+  .optech-service-details-wrap ul {
+    list-style-type: disc !important;
+    list-style-position: outside !important;
+    margin-left: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+
+  .optech-service-details-wrap ol {
+    list-style-type: decimal !important;
+    list-style-position: outside !important;
+    margin-left: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+
+  /* Reset the LI so it doesn’t add its own marker */
+  .optech-service-details-wrap li {
+    display: list-item !important;
+    list-style: inherit !important;
+    /* use parent's style, don't duplicate */
+  }
+</style>
+
+{% endblock extra_head %}
+{% block content %}
+<div class="section optech-section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="optech-service-details-wrap">
+          <img data-aos="fade-up" data-aos-duration="800" src="{{image}}" alt="">
+          <div>
+            {{ detailed_description|safe }}
+          </div>
+          <!-- <div class="optech-service-details-item">
+              <h3>Overview</h3>
+              <p>A content management system helps you create, manage, and publish content on the web. It also keep content organized and accessible so it can be used and repurposed effectively. There are various kinds of content management systems available—from cloud-based to a headless</p>
+
+              <p>CMS provides user-friendly features for easy editing and is compatible with installing plugins and tools that provide even more features for advanced functions. API CMS’s are built to have an excellent user-friendly interface that is easy to use.</p>
+            </div>
+            <div class="optech-service-details-item">
+              <h3>Features</h3>
+              <p>A content management system (CMS) is an application that is used to manage content, allowing multiple contributors to create, edit and publish. Content in a CMS is typically stored in a database and displayed in a presentation layer based on a set of templates like a website.</p>
+              <div class="optech-icon-list">
+                <ul>
+                  <li><i class="ri-check-line"></i>Creating and editing content</li>
+                  <li><i class="ri-check-line"></i>Workflows, reporting, and content organization</li>
+                  <li><i class="ri-check-line"></i>User & role-based administration and security</li>
+                  <li><i class="ri-check-line"></i>Flexibility, scalability, and performance and analysis</li>
+                  <li><i class="ri-check-line"></i>Multilingual content capabilities</li>
+                </ul>
+              </div>
+            </div>
+            <div class="optech-service-details-item">
+              <h3>Goal</h3>
+              <p>A content management system (CMS) is an application that is used to manage content, allowing multiple contributors to create, edit and publish. Content in a CMS is typically stored in a database and displayed in a presentation layer based on a set of templates like a website.</p>
+            </div> -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="optech-service-sidebar">
+          <div class="optech-service-menu">
+            <ul>
+              {% for i in services %}
+              <li><a href="{% url 'service_detail' i.slug %}">{{i.name}} <i class="ri-arrow-right-up-line"></i></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="optech-service-contact" data-aos="fade-up" data-aos-duration="800"
+            style="background-image: url({% static 'assets/images/service/bg.png' %})">
+            <div class="optech-service-contact-icon">
+              <img src="{% static 'assets/images/service/icon.svg' %}" alt="Service Icon">
+            </div>
+            <h3>Don’t hesitate to contact us</h3>
+            <p>We’re always ready to provide reliable IT solutions tailored to your needs.</p>
+            <a class="optech-default-btn" data-text="Get in Touch" href="{% url 'contact' %}">
+              <span class="btn-wraper">Get in Touch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}
