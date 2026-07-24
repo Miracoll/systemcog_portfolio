@@ -94,9 +94,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 if os.environ.get("DB_ENGINE") == "mysql":
-    import pymysql
-
-    pymysql.install_as_MySQLdb()
+    # PyMySQL is registered as the MySQLdb driver in project/__init__.py.
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -154,6 +152,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+# Destination for `collectstatic` (used on the live server).
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
