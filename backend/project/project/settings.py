@@ -153,9 +153,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 # Destination for `collectstatic` (used on the live server).
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.environ.get("STATIC_ROOT") or BASE_DIR / "staticfiles"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.environ.get("MEDIA_ROOT") or os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
