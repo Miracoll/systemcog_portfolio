@@ -1,0 +1,101 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Privacy Policy - SystemCog{% endblock %}
+{% block description %}Read SystemCog's Privacy Policy to understand what information we collect, how we use it, and the
+choices and rights you have over your personal data.{% endblock %}
+{% block keywords %}SystemCog privacy policy, data protection, personal data, cookies, information security{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/privacy-policy{% endblock %}
+{% block canonical %}https://www.systemcog.cc/privacy-policy{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: {% now "F Y" %}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="optech-service-details-wrap">
+
+                    <div class="optech-service-details-item">
+                        <p>At SystemCog (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), your privacy matters.
+                            This policy explains what information we collect when you use our website and products, how we
+                            use it, and the rights you have. By using our services you agree to the practices described
+                            here.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Information We Collect</h3>
+                        <p>We collect only what we need to provide and improve our services:</p>
+                        <div class="optech-icon-list">
+                            <ul>
+                                <li><i class="ri-check-line"></i>Information you give us &mdash; such as your name, email,
+                                    and phone number when you contact us or submit a form.</li>
+                                <li><i class="ri-check-line"></i>Usage data &mdash; how you interact with our site,
+                                    including pages visited and features used.</li>
+                                <li><i class="ri-check-line"></i>Technical data &mdash; device, browser, and IP
+                                    information collected automatically to keep our services secure and reliable.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>How We Use Your Information</h3>
+                        <p>We use the information we collect to respond to your enquiries, deliver and maintain our
+                            products, improve the user experience, keep our platforms secure, and &mdash; where you have
+                            agreed &mdash; send you relevant updates. We do not sell your personal data to anyone.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Cookies</h3>
+                        <p>Our website uses cookies and similar technologies to remember your preferences and understand
+                            how the site is used. You can control or disable cookies through your browser settings,
+                            though some features may not work as intended without them.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Data Sharing</h3>
+                        <p>We share information only with trusted service providers who help us operate our platforms,
+                            and only to the extent needed to deliver our services. We may also disclose information where
+                            required by law or to protect our rights and the safety of our users.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Data Security</h3>
+                        <p>We apply appropriate technical and organisational measures to protect your information against
+                            unauthorised access, loss, or misuse. While no system is completely secure, we work
+                            continuously to safeguard the data you entrust to us.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Your Rights</h3>
+                        <p>You may request access to the personal data we hold about you, ask us to correct or delete it,
+                            or withdraw your consent to marketing communications at any time. To exercise any of these
+                            rights, please <a href="{% url 'contact' %}">get in touch with us</a>.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Changes to This Policy</h3>
+                        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page
+                            with a revised &ldquo;last updated&rdquo; date.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Contact Us</h3>
+                        <p>If you have any questions about this policy or how we handle your data, please
+                            <a href="{% url 'contact' %}">contact us</a> and we&rsquo;ll be happy to help.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}

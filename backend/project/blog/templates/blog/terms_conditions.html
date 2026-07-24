@@ -1,0 +1,86 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Terms & Conditions - SystemCog{% endblock %}
+{% block description %}Read the Terms & Conditions that govern your use of the SystemCog website, products, and
+services.{% endblock %}
+{% block keywords %}SystemCog terms and conditions, terms of service, website terms, user agreement{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/terms-conditions{% endblock %}
+{% block canonical %}https://www.systemcog.cc/terms-conditions{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Terms &amp; Conditions</h2>
+            <p>Last updated: {% now "F Y" %}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="optech-service-details-wrap">
+
+                    <div class="optech-service-details-item">
+                        <p>These Terms &amp; Conditions govern your access to and use of the SystemCog website, products,
+                            and services. By using our website you agree to these terms. If you do not agree, please
+                            discontinue use of our services.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Use of Our Services</h3>
+                        <p>You agree to use our website and products lawfully and not to misuse, disrupt, or attempt to
+                            gain unauthorised access to any part of our systems. You are responsible for any activity
+                            carried out under your account or through your use of our services.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Intellectual Property</h3>
+                        <p>All content on this website &mdash; including text, graphics, logos, designs, and software
+                            &mdash; is the property of SystemCog or its licensors and is protected by applicable laws.
+                            You may not copy, reproduce, or redistribute any part of it without our prior written
+                            permission.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Projects &amp; Engagements</h3>
+                        <p>Where we deliver a project or service for you, the specific scope, deliverables, timelines,
+                            and fees will be set out in a separate agreement or proposal. Those project-specific terms
+                            apply in addition to these Terms &amp; Conditions.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Third-Party Links</h3>
+                        <p>Our website may contain links to third-party sites. We are not responsible for the content,
+                            policies, or practices of those sites and encourage you to review their terms before using
+                            them.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Limitation of Liability</h3>
+                        <p>Our website and its content are provided on an &ldquo;as is&rdquo; basis. To the extent
+                            permitted by law, SystemCog is not liable for any indirect or consequential loss arising from
+                            your use of, or inability to use, our website or services.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Changes to These Terms</h3>
+                        <p>We may update these Terms &amp; Conditions from time to time. Continued use of our website
+                            after changes are posted constitutes acceptance of the revised terms.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>Contact Us</h3>
+                        <p>If you have any questions about these terms, please <a href="{% url 'contact' %}">contact
+                            us</a>.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}

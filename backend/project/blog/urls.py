@@ -13,4 +13,8 @@ urlpatterns = [
     path("portfolio/<slug:slug>/", views.PortfolioDetailView.as_view(), name="portfolio_detail"),
     path("team/<slug:slug>/", views.team_detail, name="team_detail"),
     path("team/", views.team, name="team"),
+    path("working-process/", views.working_process, name="working_process"),
+    path("privacy-policy/", views.privacy_policy, name="privacy_policy"),
+    path("terms-conditions/", views.terms_conditions, name="terms_conditions"),
+    path("faqs/", views.faqs, name="faqs"),
 ]

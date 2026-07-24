@@ -184,3 +184,15 @@ def team(request):
         'teams':teams
     }
     return render(request, 'blog/team.html', context)
+
+def working_process(request):
+    return render(request, 'blog/working_process.html')
+
+def privacy_policy(request):
+    return render(request, 'blog/privacy_policy.html')
+
+def terms_conditions(request):
+    return render(request, 'blog/terms_conditions.html')
+
+def faqs(request):
+    return render(request, 'blog/faqs.html')

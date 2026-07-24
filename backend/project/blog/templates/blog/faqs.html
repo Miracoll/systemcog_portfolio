@@ -1,0 +1,173 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}FAQs - SystemCog{% endblock %}
+{% block description %}Frequently asked questions about SystemCog &mdash; the services we offer, how we work, timelines,
+pricing, and the products we've built like Schoolpadi, Exampadi, Kwikride and Tysbe.{% endblock %}
+{% block keywords %}SystemCog FAQ, frequently asked questions, software development questions, IoT, project timelines,
+pricing{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/faqs{% endblock %}
+{% block canonical %}https://www.systemcog.cc/faqs{% endblock %}
+
+{% block extra_head %}
+<style>
+    .optech-faq-wrap .init-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .optech-faq-item {
+        background: #fff;
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+
+    .optech-faq-item .init-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 26px;
+        margin: 0;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        color: #0b1120;
+        transition: color .2s ease;
+    }
+
+    .optech-faq-item .init-header:hover {
+        color: #4c6fff;
+    }
+
+    .optech-faq-item .init-header .optech-faq-icon {
+        flex: 0 0 auto;
+        font-size: 22px;
+        line-height: 1;
+        transition: transform .3s ease;
+    }
+
+    .optech-faq-item.open .init-header .optech-faq-icon {
+        transform: rotate(45deg);
+    }
+
+    .optech-faq-item .init-body {
+        display: none;
+        padding: 0 26px 24px;
+    }
+
+    .optech-faq-item .init-body p {
+        margin: 0;
+        color: #5b6472;
+        line-height: 1.7;
+    }
+</style>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you might want to know about working with SystemCog. Can&rsquo;t find your answer here?
+                <a href="{% url 'contact' %}">Get in touch</a> and we&rsquo;ll help.</p>
+        </div>
+
+        <div class="optech-faq-wrap">
+            <div class="init-wrap">
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>What does SystemCog do?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>We design, build, and maintain real software, IoT, and embedded products. We don&rsquo;t just
+                            prototype &mdash; we launch and support live platforms, including products like Schoolpadi,
+                            Exampadi, Kwikride and Tysbe that thousands of people rely on every day.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>What kind of projects do you take on?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>We work across education, mobility, marketplaces, and more &mdash; from web and mobile apps to
+                            connected systems. If it involves turning an idea into a reliable, scalable product, we can
+                            help. You can browse our <a href="{% url 'portfolio' %}">projects</a> to see the range.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>How does your working process work?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>We follow a clear, end-to-end path: discovery and strategy, design and prototyping,
+                            development and integration, testing, launch, and ongoing support. You can read the full
+                            breakdown on our <a href="{% url 'working_process' %}">Working Process</a> page.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>How long does a project take?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>It depends on scope and complexity. During discovery we agree on a realistic timeline with
+                            clear milestones, so you always know what to expect and when. Smaller builds can ship in
+                            weeks, while larger platforms are delivered in planned phases.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>How much does it cost?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>Every project is different, so we price based on scope, timeline, and the outcomes you need.
+                            After an initial conversation we provide a clear proposal with no hidden costs.
+                            <a href="{% url 'contact' %}">Reach out</a> for a tailored quote.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>Do you provide support after launch?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>Yes. Shipping is the beginning, not the end. We monitor, maintain, and improve your product
+                            over time &mdash; fixing issues, adding features, and helping it scale as your business
+                            grows.</p>
+                    </div>
+                </div>
+
+                <div class="optech-faq-item">
+                    <h5 class="init-header">
+                        <span>How do we get started?</span>
+                        <i class="ri-add-line optech-faq-icon"></i>
+                    </h5>
+                    <div class="init-body">
+                        <p>Simply <a href="{% url 'contact' %}">get in touch</a>. Tell us about your idea or challenge,
+                            and we&rsquo;ll set up a discovery conversation to map out the goals, scope, and next
+                            steps.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}

@@ -1,0 +1,85 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Working Process - SystemCog{% endblock %}
+{% block description %}Discover how SystemCog works &mdash; our step-by-step process for turning ideas into shipped
+software, IoT, and embedded products like Schoolpadi, Exampadi, Kwikride and Tysbe.{% endblock %}
+{% block keywords %}SystemCog working process, product development process, software development workflow, IoT delivery,
+project methodology{% endblock %}
+{% block image %}{% static 'blog/images/systemcog-logo.png' %}{% endblock %}
+{% block url %}https://www.systemcog.cc/working-process{% endblock %}
+{% block canonical %}https://www.systemcog.cc/working-process{% endblock %}
+
+{% block content %}
+<div class="section optech-section-padding">
+    <div class="container">
+        <div class="optech-section-title center">
+            <h2>Our Working Process</h2>
+            <p>We don&rsquo;t just prototype &mdash; we launch and maintain live products. Here&rsquo;s the disciplined,
+                end-to-end path we follow to take an idea from a first conversation to a platform thousands of people
+                rely on every day.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="optech-service-details-wrap">
+
+                    <div class="optech-service-details-item">
+                        <h3>01. Discovery &amp; Strategy</h3>
+                        <p>Every product starts with understanding the problem. We sit down with you to map out your
+                            goals, users, and constraints, then translate them into a clear scope, timeline, and set of
+                            success metrics. You leave this stage knowing exactly what we&rsquo;ll build and why.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>02. Design &amp; Prototyping</h3>
+                        <p>We shape the experience before a single line of production code is written. Wireframes and
+                            interactive prototypes let you see and feel the product early, so we can refine the flow and
+                            interface while changes are still cheap and fast.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>03. Development &amp; Integration</h3>
+                        <p>Our engineers build in short, reviewable increments &mdash; combining software, IoT, and
+                            embedded systems where needed. We integrate the moving parts continuously so the product
+                            grows as one coherent system rather than a set of disconnected pieces.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>04. Testing &amp; Quality Assurance</h3>
+                        <p>Before anything reaches your users, it is tested for functionality, performance, and security.
+                            We engineer for scale from day one, so the platform keeps performing as more schools, riders,
+                            and transactions come on board.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>05. Launch &amp; Deployment</h3>
+                        <p>We handle the release end-to-end &mdash; deployment, configuration, and the final checks that
+                            make a launch smooth. This is the stage where products like Schoolpadi, Exampadi, Kwikride
+                            and Tysbe went from idea to live platform.</p>
+                    </div>
+
+                    <div class="optech-service-details-item">
+                        <h3>06. Support &amp; Growth</h3>
+                        <p>Shipping is the beginning, not the end. We monitor, maintain, and improve your product over
+                            time &mdash; fixing issues, adding features, and helping it scale as your business grows.</p>
+                    </div>
+
+                    <div class="optech-icon-list">
+                        <ul>
+                            <li><i class="ri-check-line"></i>Clear scope, timelines, and success metrics up front</li>
+                            <li><i class="ri-check-line"></i>Transparent, incremental progress you can see</li>
+                            <li><i class="ri-check-line"></i>Built for scale, security, and reliability</li>
+                            <li><i class="ri-check-line"></i>Ongoing support long after launch</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End section -->
+
+{% include "blog/pre_footer.html" %}
+<!-- End section -->
+{% endblock content %}
