@@ -123,24 +123,30 @@ tutorials, tech reviews{% endblock %}
 </div>
 <!-- End section -->
 
-<div class="sectin bg-light1 optech-section-padding">
+<div class="section bg-light1 optech-section-padding">
     <div class="container">
         <div class="optech-section-title center">
-            <h2>Our awesome services to give you success</h2>
+            <h2>Products we've built and shipped</h2>
         </div>
     </div>
     <div class="optech-4column-slider" data-aos="fade-up" data-aos-duration="800">
-        {% for service in services %}
+        {% for project in featured_projects %}
         <div class="optech-iconbox-wrap">
             <div class="optech-iconbox-icon">
-                <img src="{{service.icon.url}}" alt="">
+                {% if project.logo %}
+                <img src="{{ project.logo.url }}" alt="{{ project.name }} logo">
+                {% elif project.short_image %}
+                <img src="{{ project.short_image.url }}" alt="{{ project.name }}">
+                {% endif %}
             </div>
             <div class="optech-iconbox-data">
-                <!-- <h5>Data Tracking <br> Security</h5> -->
-                <h5>{{service.name}}</h5>
-                <p>{{service.description|safe}}</p>
-                <a class='optech-icon-btn' href='{% url "service_detail" service.slug %}'><i class="icon-show ri-arrow-right-line"></i>
-                    <span>Learn More</span> <i class="icon-hide ri-arrow-right-line"></i></a>
+                <h5>{{ project.name }}</h5>
+                <p>{{ project.description|striptags|truncatewords:18 }}</p>
+                <a class='optech-icon-btn' href="{{ project.external_link }}" target="_blank" rel="noopener noreferrer">
+                    <i class="icon-show ri-arrow-right-up-line"></i>
+                    <span>Visit Site</span>
+                    <i class="icon-hide ri-arrow-right-up-line"></i>
+                </a>
             </div>
         </div>
         {% endfor %}

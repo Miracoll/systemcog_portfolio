@@ -10,10 +10,16 @@ def home(request):
     portfolios = Portfolio.objects.all()[:6]
     teams = TeamMember.objects.all()[:4]
     blog = Blog.objects.all()[:4]
+    featured_projects = (
+        Portfolio.objects
+        .exclude(external_link__isnull=True)
+        .exclude(external_link__exact="")[:8]
+    )
     context = {
         'portfolios':portfolios,
         'teams':teams,
         'blogs':blog,
+        'featured_projects':featured_projects,
     }
     return render(request, 'blog/home.html', context)
 
